@@ -1,27 +1,6 @@
 // Assignment code here
 
-// var userNumber = []
-// for (var i = 8; i<=128; i++) {
-//   userNumber.push(i)
-// }
-
-// if (userNumber < 8){
-//   alert("Password must be between 8-128 characters");
-// }
-// else if (userNumber > 128){
-//   alert("Password must be between 8-128 characters");
-// }
-
-// var userNumber = prompt("Choose password length (Between 8-128 Characters)");
-
-// var userNumber = restart; 
-
-
-// var userNumber = prompt("Choose password length (Between 8-128 Characters)");
-// if ((userNumber<8) || (userNumber>128)) {
-//   alert("Password must be between 8-128 characters");
-//   restart();
-// }
+// Generates the prompt asks user for PW character length
 
 var userNumber;
 
@@ -37,39 +16,42 @@ function restart() {
   
 };
 
-// restart();
-
-// var userNumber = ""
-
-// if ((userNumber<8) || (userNumber>128)) {
-//   var userNumber = prompt("Choose password length (Between 8-128 Characters)");
-//       alert("Password must be between 8-128 characters");
-      
-//      }
-//      else if ((userNumber>=8) || (userNumber<=128)) {
-//       generatePassword(); 
-//      }
-    
-``
-
 function generatePassword() {
-  var chars ="0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var passwordLength = userNumber;
-  var password = "";
   
-for(var i=0; i< passwordLength; i++){
-  var randomNumber = Math.floor(Math.random()*chars.length);
+  var num ="0123456789".split("")
+  var alphalow = "abcdefghijklmnopqrstuvwxyz".split("")
+  var alphahigh = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+  var special = "!@#$%^&*()".split("")
+
+  var prePassword = [];
+  var password = "";
+
+if (confirm("Do you want Numbers?")) {
+  prePassword = prePassword.concat(num)
+}
+if (confirm("Do you want Capitalized Letters?")) {
+  prePassword = prePassword.concat(alphahigh)
+}
+if (confirm("Do you want Special Characters?")) {
+  prePassword = prePassword.concat(special)
+}
+if (confirm("Do you want Lower Characters?")) {
+  prePassword = prePassword.concat(alphalow)
+}
+// console.log(prePassword)
+if (prePassword.length === 0){
+  alert("You must choose a variable")
+}else{
+
+for(var i=0; i< userNumber; i++){
+  var randomNumber = Math.floor(Math.random()*prePassword.length);
  
-  password += chars.substring(randomNumber, randomNumber + 1);
+  password += prePassword[randomNumber]
+}
 }
 document.getElementById('password').value = password;
+// console.log(password)
 }
-
-
-
-
-
-
 
 
 // Get references to the #generate element
@@ -85,11 +67,6 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-
-// generateBtn.addEventListener("click", function promptUser(){
-//   var userNumber = prompt("Choose Password Length (8-128 Characters)");
-//   alert(userNumber)
-// })
 
 generateBtn.addEventListener("click", restart);
 
