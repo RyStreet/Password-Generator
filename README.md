@@ -1,4 +1,4 @@
-# Password Generator Starter Code
+# Password Generator 
 
 DESCRIPTION
 This project is a simple password generator that allows users to choose variable such as Password length, lower case and capitalized characters, special characters and numbers.
