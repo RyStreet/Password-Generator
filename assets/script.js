@@ -56,7 +56,7 @@ for(var i=0; i< userNumber; i++){
 }
 }
 document.getElementById('password').value = password;
-// console.log(password)
+
 }
 
 
