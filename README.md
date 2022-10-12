@@ -5,7 +5,7 @@ This project is a simple password generator that allows users to choose differen
 This generator was created using Javascript, HTML and CSS.
 
 LINK:
-https://rystreet.github.io/pw-gen/
+https://rystreet.github.io/Password-Generator/
 
 License:
 MIT License
